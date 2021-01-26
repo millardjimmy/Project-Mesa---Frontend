@@ -23,7 +23,7 @@ class NewMoveForm extends React.Component {
   }
 
   render() {
-    console.log("move form props", this.props.addMove);
+    console.log("move form props", this.props);
     return (
       <Fragment>
         <form onSubmit={this.handleSubmit} className="row new-move-form">
@@ -46,17 +46,17 @@ class NewMoveForm extends React.Component {
 }
 
 
+function mapStateToProps(state) {
+  console.log("state in NewMoveForm", state);
+  return {
+    userId: state.user.user_id
+  }
+}
+
 function mapDispatchToProps(dispatch) {
   return {
     addMove: (name, date, userId) => dispatch(addMove(name, date, userId))
   }
 }
 
-function mapStateToProps(state) {
-    console.log("state in NewMoveForm", state);
-    return {
-        userId: state.user.user_id
-    }
-}
-
-export default connect(null, mapDispatchToProps)(NewMoveForm);
+export default connect(mapStateToProps, mapDispatchToProps)(NewMoveForm);
