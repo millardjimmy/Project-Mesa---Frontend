@@ -19,11 +19,11 @@ class NewMoveForm extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.addMove(this.state.moveName, this.state.moveDate);
+    this.props.addMove(this.state.moveName, this.state.moveDate, this.props.userId);
   }
 
   render() {
-    // console.log("move form props", this.props.addMove);
+    console.log("move form props", this.props.addMove);
     return (
       <Fragment>
         <form onSubmit={this.handleSubmit} className="row new-move-form">
@@ -50,6 +50,13 @@ function mapDispatchToProps(dispatch) {
   return {
     addMove: (name, date, userId) => dispatch(addMove(name, date, userId))
   }
+}
+
+function mapStateToProps(state) {
+    console.log("state in NewMoveForm", state);
+    return {
+        userId: state.user.user_id
+    }
 }
 
 export default connect(null, mapDispatchToProps)(NewMoveForm);

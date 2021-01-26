@@ -3,7 +3,7 @@ import { combineReducers } from 'redux';
 import movesReducer from './movesReducer'
 import userReducer from './userReducer'
 
-const rootReducer = combineReducers({ moves: movesReducers, users: userReducer })
+const rootReducer = combineReducers({ moves: movesReducers, user: userReducer })
 
   // making key value pairs for a global store
   

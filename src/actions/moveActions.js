@@ -17,7 +17,7 @@ export function getMoves(id) {
   export function addMove(name, date, userId) {
     // debugger
     return(dispatch) => {
-      fetch(`http://localhost:3000/users/1/moves`, {
+      fetch(`http://localhost:3000/users/${userID}/moves`, {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
