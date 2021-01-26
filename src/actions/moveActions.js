@@ -43,3 +43,9 @@ export function deleteMove(userId, moveId) {
         return dispatch({type: 'DELETE_MOVE', payload: moveId})
     }
   }
+
+// PATCH request / EDIT A MOVE:
+// http://localhost:3000/users/userid/moves/moveid
+// export function editMove() {
+//
+// }
