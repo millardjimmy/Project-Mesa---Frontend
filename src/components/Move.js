@@ -6,20 +6,19 @@ import { prefillForm } from '../actions/moveActions';
 
 class Move extends React.Component {
 
-    state = {
-        name: this.props.move.name,
-        date: this.props.move.date
-    }
+  state = {
+    name: this.props.move.name,
+    date: this.props.move.date
+  }
 
-    static getDerivedStateFromProps(props, state) {
-        if (props.move.name !== state.name || props.move.date !== state.date) {
-            return ({
-                name: props.move.name,
-                date: props.move.date
-            })
-        }
-
+  static getDerivedStateFromProps(props, state) {
+    if (props.move.name !== state.name || props.move.date !== state.date) {
+      return ({
+        name: props.move.name,
+        date: props.move.date
+      })
     }
+  }
 
   handleClickToEdit = () => {
     // pass the selectedMove to the redux store via selectMove function
@@ -35,16 +34,17 @@ class Move extends React.Component {
 
   reformatDate = (date) => {
     if (date) {
-        let arrayOfDate = date.split("-")
-        let newArrOfDate = []
-        newArrOfDate.push(arrayOfDate[1])
-        newArrOfDate.push(arrayOfDate[2])
-        newArrOfDate.push(arrayOfDate[0])
-        return newArrOfDate.join(',').split(',').join("-")
+      let arrayOfDate = date.split("-")
+      let newArrOfDate = []
+      newArrOfDate.push(arrayOfDate[1])
+      newArrOfDate.push(arrayOfDate[2])
+      newArrOfDate.push(arrayOfDate[0])
+      return newArrOfDate.join(',').split(',').join("-")
     } else {
-        return null;
+      return null;
     }
-}
+  }
+
   render() {
     // debugger
     console.log("move props", this.props)
@@ -63,10 +63,10 @@ class Move extends React.Component {
               See Boxes
             </button>
         </div>
-        <button onClick={this.handleDelete} className="delete-move-btn btn-floating btn-small waves-effect red accent-3">
+        <button onClick={this.handleDelete} className="small-actions delete-move-btn btn-floating btn-small waves-effect red accent-3">
           <span style={{fontFamily: 'Hammersmith One'}}>X</span>
         </button>
-        <button onClick={this.handleClickToEdit} className="edit-move-btn btn-floating btn-small waves-effect deep-orange accent-3">
+        <button onClick={this.handleClickToEdit} className="small-actions edit-move-btn btn-floating btn-small waves-effect deep-orange accent-3">
           <span style={{fontFamily: 'Hammersmith One'}}><i className="material-icons">edit</i></span>
         </button>
       </div>
