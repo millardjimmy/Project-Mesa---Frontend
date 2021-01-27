@@ -12,6 +12,12 @@ class Move extends React.Component {
     }
 
     static getDerivedStateFromProps(props, state) {
+        if (props.move.name !== state.name || props.move.date !== state.date) {
+            return ({
+                name: props.move.name,
+                date: props.move.date
+            })
+        }
 
     }
 
@@ -38,7 +44,7 @@ class Move extends React.Component {
     } else {
         return null;
     }
-
+}
   render() {
     // debugger
     console.log("move props", this.props)
@@ -73,7 +79,7 @@ class Move extends React.Component {
 function mapStateToProps(state) {
   console.log("REDUX STATE IS", state);
   return {
-    userId: state.user.user_id
+    userId: state.user.user_id,
     selectMove: state.move
   }
 }
