@@ -79,8 +79,7 @@ class Move extends React.Component {
 function mapStateToProps(state) {
   console.log("REDUX STATE IS", state);
   return {
-    userId: state.user.user_id,
-    selectMove: state.move
+    userId: state.user.user_id
   }
 }
 
