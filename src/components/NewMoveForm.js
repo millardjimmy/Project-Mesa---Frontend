@@ -54,7 +54,7 @@ componentDidUpdate(prevProps) {
 
 
   render() {
-    console.log("%c move form props", 'color: pink', this.props);
+    // console.log("%c move form props", 'color: pink', this.props);
     return (
       <Fragment>
         <form onSubmit={this.handleSubmit} className="row new-move-form">
