@@ -1,7 +1,7 @@
 const initialState = []
 
 
-const movesReducer = (state = initialState, action) => {
+const movesReducer = (state=initialState, action) => {
 
   switch (action.type) {
     case "GET_MOVES":
@@ -27,7 +27,7 @@ const movesReducer = (state = initialState, action) => {
 
 
     default:
-      return state
+      return state;
   }
 
 

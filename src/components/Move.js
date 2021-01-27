@@ -27,7 +27,7 @@ class Move extends React.Component {
 
   handleClickToEdit = () => {
     // pass the selectedMove to the redux store via selectMove function
-    console.log("clicked a move to edit");
+    // console.log("clicked a move to edit");
     this.props.selectMove(this.props.move)
     this.props.prefillForm(this.props.move)
   }
@@ -52,7 +52,7 @@ class Move extends React.Component {
 
   render() {
     // debugger
-    // console.log("move props", this.props.history)
+    console.log("move props", this.props)
     return (
       <div className="col s12 m4">
       <div className="card small move-card">
