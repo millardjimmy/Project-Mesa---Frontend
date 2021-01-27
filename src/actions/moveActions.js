@@ -61,7 +61,21 @@ export function selectMove(move) {
   
 
 // PATCH request / EDIT A MOVE:
-// http://localhost:3000/users/userid/moves/moveid
-// export function editMove() {
-//
-// }
+// http://localhost:3000/users/userid/moves/moveId
+export function editMove(name, date, userId, moveId) {
+    return(dispatch) => {
+        fetch(`http://localhost:3000/users/${userId}/moves/${moveId}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        name: name,
+        date: date
+      })
+    })
+      .then(response => response.json())
+      .then(editedMove => {
+        // debugger
+        return dispatch({type: 'EDIT_MOVE', payload: editedMove })
+      })
+  }
+}
