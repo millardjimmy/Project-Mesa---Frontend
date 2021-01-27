@@ -40,7 +40,7 @@
 }
 
 .small-actions {
-  margin-right: 155px;
+  margin-right: 156px;
   margin-bottom: 25px;
 }
 
@@ -50,7 +50,7 @@
   margin-right: 5px;
 }*/
 
-#move-cont-title {
+.cont-title {
   font-family: 'Hammersmith One', sans-serif;
 }
 
