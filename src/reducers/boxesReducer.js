@@ -5,7 +5,8 @@ const boxesReducer = (state=initialState, action) => {
 
   switch (action.type) {
     case "GET_BOXES":
-      return [...state, ...action.payload]
+        console.log("===========payload", action.payload)
+        return [...action.payload]
 
     default:
       return state;
