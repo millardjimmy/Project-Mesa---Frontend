@@ -19,7 +19,7 @@ class BoxList extends React.Component {
         return <Box box={box} key={box.id} idx={idx} />
     })
     return (
-      <div className="row">
+      <div className="col s9">
           {mappedBoxes}
       </div>
     )
