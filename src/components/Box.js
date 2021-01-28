@@ -8,7 +8,7 @@ class Box extends React.Component {
     return (
         <div className="col s12 m3">
         <div className="card small">
-        <p>Box Number: </p>
+        <p>Box Number: {this.props.idx + 1}</p>
         <span className="card-title">
           "{this.props.box.name}"
 

@@ -50,10 +50,10 @@ class Move extends React.Component {
     }
   }
 
-  handleClickToSeeBoxes = () => {
-      this.props,selectMove(this.props.move)
+  handleClickToSeeBoxes = () => (
+      this.props,selectMove(this.props.move),
       this.props.history.push('/boxes')
-  }
+  )
 
   render() {
     // debugger

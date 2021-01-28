@@ -15,8 +15,8 @@ class BoxList extends React.Component {
   render() {
     console.log("boxlist props", this.props);
 
-    const mappedBoxes = this.props.boxes.map((box) => {
-        return <Box box={box} key={box.is} />
+    const mappedBoxes = this.props.boxes.map((box, idx) => {
+        return <Box box={box} key={box.id} idx={idx} />
     })
     return (
       <div className="row">
