@@ -1,6 +1,7 @@
 .card {
   /* font-family: 'Karla', sans-serif; */
   font-family: 'Hammersmith One', sans-serif;
+  align-content: center;
 }
 
 /* .card-content {
@@ -27,21 +28,22 @@
 }
 
 .delete-move-btn {
-  position: absolute;
+  position: relative;
   bottom: 0px;
   right: 0px;
 }
 
 .edit-move-btn {
-  position: absolute;
+  position: relative;
   bottom: 0px;
-  right: 37px
+  right: 0px;
+  margin: 5px;
 }
 
-.small-actions {
+/*.small-actions {
   margin-right: 156px;
   margin-bottom: 25px;
-}
+} */
 
 .nav-btn {
   margin: 2px;

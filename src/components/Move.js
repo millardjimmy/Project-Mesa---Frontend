@@ -27,7 +27,7 @@ class Move extends React.Component {
 
   handleClickToEdit = () => {
     // pass the selectedMove to the redux store via selectMove function
-    // console.log("clicked a move to edit");
+    // console.log("clicked a move to edit");x
     this.props.selectMove(this.props.move)
     this.props.prefillForm(this.props.move)
   }
@@ -51,35 +51,35 @@ class Move extends React.Component {
   }
 
   handleClickToSeeBoxes = () => {
-      const { id, user_id } = this.props.move
-      this.props,selectMove(this.props.move),
-      this.props.history.push(`users/${user_id}/moves/${id}/boxes`)
+    const { id, user_id } = this.props.move
+    this.props.selectMove(this.props.move)
+    this.props.history.push(`users/${user_id}/moves/${id}/boxes`)
   }
 
   render() {
     // debugger
-    console.log("move props", this.props)
     return (
       <div className="col s12 m4">
       <div className="card small move-card">
         <div className="card-content white-text">
           <span className="move_title card-title">
             {this.state.name}
-
           </span>
           {this.reformatDate(this.state.date)}
         </div>
         <div className="see-boxes-btn">
-            <button onClick={() => this.handleClickToSeeBoxes} className="see-boxes-btn-text waves-effect cyan lighten-2 btn-small">
+            <button onClick={this.handleClickToSeeBoxes} className="see-boxes-btn-text waves-effect cyan lighten-2 btn-small">
               See Boxes
             </button>
         </div>
-        <button onClick={this.handleDelete} className="small-actions delete-move-btn btn-floating btn-small waves-effect red accent-3">
-          <span style={{fontFamily: 'Hammersmith One'}}>X</span>
-        </button>
-        <button onClick={this.handleClickToEdit} className="small-actions edit-move-btn btn-floating btn-small waves-effect deep-orange accent-3">
-          <span style={{fontFamily: 'Hammersmith One'}}><i className="material-icons">edit</i></span>
-        </button>
+        <div style={{align: 'center'}}>
+          <button onClick={this.handleDelete} className="small-actions delete-move-btn btn-floating btn-small waves-effect red accent-3">
+            <span style={{fontFamily: 'Hammersmith One'}}>X</span>
+          </button>
+          <button onClick={this.handleClickToEdit} className="small-actions edit-move-btn btn-floating btn-small waves-effect deep-orange accent-3">
+            <span style={{fontFamily: 'Hammersmith One'}}><i className="material-icons">edit</i></span>
+          </button>
+        </div>
       </div>
     </div>
     )
