@@ -13,7 +13,7 @@ class BoxList extends React.Component {
 }
 
   render() {
-    console.log("Boxlist props", this.props);
+    // console.log("Boxlist props", this.props);
     const mappedBoxes = this.props.boxes.map((box, idx) => {
         return <Box box={box} key={box.id} idx={idx} />
     })

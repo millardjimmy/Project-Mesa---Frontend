@@ -6,12 +6,16 @@ import { withRouter } from 'react-router-dom'
 class ItemsSideBar extends React.Component {
   componentDidMount() {
     // http://localhost:3000/users/1/moves/1/boxes
-    // console.log("ItemsSideBar",this.props);
-    // this.props.getMoveItems()
+    const { moveId, userId } = this.props.match.params
+    this.props.getMoveItems(userId, moveId)
   }
 
   render() {
-    console.log("ItemsSideBar PROPS", this.props);
+    // console.log("ItemsSideBar PROPS", this.props);
+    const moveItems = this.props.moveItems.map((moveItem) => {
+        return <li key={moveItem.id}>{moveItem.name} -- Box: {moveItem.box_id}</li>
+      })
+  
     return (
       <div className="col s3" style={{border: 'ridge #4dd0e1 3px', marginTop: '15px'}}>
         <h4>ITEMS</h4>
@@ -22,10 +26,11 @@ class ItemsSideBar extends React.Component {
 } // end class
 
 const mapStateToProps = state => {
-  // console.log("STATE",state);
+  console.log("STATE",state);
   return {
     move: state.move,
-    user: state.user
+    user: state.user,
+    moveItems: state.moveItems
   }
 }
 
@@ -35,4 +40,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ItemsSideBar));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ItemsSideBar))
