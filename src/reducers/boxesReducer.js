@@ -8,7 +8,7 @@ const boxesReducer = (state=initialState, action) => {
       return [...action.payload]
 
     case "ADD_BOX": 
-      return {...state, action.payload}
+      return [...state, action.payload]
 
     default:
       return state;
