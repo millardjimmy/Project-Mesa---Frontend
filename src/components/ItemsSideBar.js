@@ -6,20 +6,29 @@ import { withRouter } from 'react-router-dom'
 class ItemsSideBar extends React.Component {
 
   componentDidMount() {
-    // http://localhost:3000/users/1/moves/1/boxes
+    // destructuring
     const { moveId, userId } = this.props.match.params
     this.props.getMoveItems(userId, moveId)
   }
 
   render() {
-    // console.log("ItemsSideBar PROPS", this.props);
-    const moveItems = this.props.moveItems.map((moveItem) => {
-        return <li key={moveItem.id}>{moveItem.name} -- Box: [BOX IDX + 1]</li>
-      })
-  
+    console.log("ItemsSideBar PROPS", this.props);
+    // const moveItems = this.props.moveItems.map((moveItem) => {
+    //   return <li key={moveItem.id}>{moveItem.name} -- Box: [BOX IDX + 1]</li>
+    // })
+
+    const filteredItems = this.props.moveItems.filter((item) => {
+      return item.name.toLowerCase().includes(this.props.searchTerm)
+    })
+
+    const moveItems = filteredItems.map((item) => {
+      return  <li key={item.id}>{item.name} -- Box: [BOX IDX + 1]</li>
+    })
+
     return (
       <div className="col s3 z-depth-3" style={{border: 'ridge #4dd0e1 3px', marginTop: '15px'}}>
         <h4>ITEMS</h4>
+        {moveItems}
       </div>
     )
   }
