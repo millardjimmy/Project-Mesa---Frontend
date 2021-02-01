@@ -26,3 +26,15 @@ export function getBoxes(userId, moveId) {
             })
         }
       }
+
+
+// DELETE A BOX
+// `http://localhost:3000/users/${userId}/moves/${moveId}/boxes/${boxId}`
+export function deleteBox(userId, moveId, boxId) {
+  return(dispatch) => {
+    fetch(`http://localhost:3000/users/${userId}/moves/${moveId}/boxes/${boxId}`, {
+      method: 'DELETE'
+    })
+      return dispatch({type: 'DELETE_BOX', payload: boxId})
+  }
+}
