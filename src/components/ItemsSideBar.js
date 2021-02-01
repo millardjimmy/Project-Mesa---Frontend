@@ -4,7 +4,7 @@ import { getMoveItems } from '../actions/itemActions'
 import { withRouter } from 'react-router-dom'
 
 class ItemsSideBar extends React.Component {
-  
+
   componentDidMount() {
     // http://localhost:3000/users/1/moves/1/boxes
     const { moveId, userId } = this.props.match.params
@@ -14,7 +14,7 @@ class ItemsSideBar extends React.Component {
   render() {
     // console.log("ItemsSideBar PROPS", this.props);
     const moveItems = this.props.moveItems.map((moveItem) => {
-        return <li key={moveItem.id}>{moveItem.name} -- Box: NEED BOX ID </li>
+        return <li key={moveItem.id}>{moveItem.name} -- Box: [BOX IDX + 1]</li>
       })
   
     return (

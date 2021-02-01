@@ -41,7 +41,7 @@ componentDidUpdate(prevProps) {
           moveDate: ''
         })
   
-      } else if (this.state.editing === true) {
+      } else if (this.state.editing === true) { //edit mode
           this.props.editMove(this.state.moveName, this.state.moveDate, this.props.userId, this.props.selectedMove.id)
   
           this.setState({
@@ -83,7 +83,7 @@ function mapStateToProps(state) {
   // console.log("state in NewMoveForm", state);
   return {
     userId: state.user.user_id,
-    selectedMove: state.move
+    selectedMove: state.move //move selected to edit
   }
 }
 
