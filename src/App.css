@@ -27,6 +27,14 @@
   height: 15px;
 }
 
+#side-bar {
+  background-image: url("/images/logo-draft.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  opacity: 1;
+}
+
+
 .nav-btn {
   margin-left: 10px;
 }
@@ -46,7 +54,7 @@
 }
 
 /* #box-cont {
-  background: url("/images/rotated.jpg") no-repeat center center fixed;
+  background: url("/images/logo-draft.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
    -o-background-size: cover;
@@ -113,6 +121,10 @@ div#editor {
 
 .see-boxes-btn-text {
     font-family: 'Hammersmith One', sans-serif;
+}
+
+.see-items-btn-text {
+  font-family: 'Hammersmith One', sans-serif;
 }
 
 .App {
