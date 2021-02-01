@@ -7,7 +7,19 @@ class NewBoxForm extends React.Component {
 // Need to make form controlled so hold inputs in state:
   state = {
     boxName: '',
-    boxCategory: ''
+    boxCategory: '',
+    editing: false
+  }
+
+  // Triggers the form to prefill when u click edit btn, updating local state values
+  componentDidUpdate(prevProps) {
+    if (this.props.selectedBox !== prevProps.selectedBox) {
+      this.setState({
+        boxName: this.props.selectedBox.name,
+        boxCategory: this.props.selectedBox.category,
+        editing: !this.state.editing
+      }, () => console.log("%c componentDidUpdate", 'color: red', this.state))
+    }
   }
 
   handleChange = (event) => {
@@ -22,7 +34,7 @@ class NewBoxForm extends React.Component {
 
     const { userId, moveId } = this.props.match.params
     this.props.addBox(this.state.boxName, this.state.boxCategory, userId, moveId)
-    
+
     this.setState({ // clear fields once u submit
       boxName: '',
       boxCategory: ''
@@ -53,6 +65,11 @@ class NewBoxForm extends React.Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    selectedBox: state.selectedBox
+  }
+}
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -60,4 +77,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default withRouter(connect(null, mapDispatchToProps)(NewBoxForm));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(NewBoxForm));

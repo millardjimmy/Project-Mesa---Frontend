@@ -4,6 +4,7 @@ import { getMoveItems } from '../actions/itemActions'
 import { withRouter } from 'react-router-dom'
 
 class ItemsSideBar extends React.Component {
+  
   componentDidMount() {
     // http://localhost:3000/users/1/moves/1/boxes
     const { moveId, userId } = this.props.match.params
