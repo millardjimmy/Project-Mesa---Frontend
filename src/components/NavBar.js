@@ -1,27 +1,40 @@
 import React from 'react';
 // import { NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router-dom'
+import { connect } from 'react-redux';
 
 class NavBar extends React.Component {
+
+  state = {
+    userId: null
+  }
+  //
+  componentDidMount() {
+    this.setState({
+      userId: this.props.userId
+    })
+  }
   // console.log("NAVBAR",props);
   handleClick = () => {
     // this.props.history.clear()
-    this.props.history.replace('/moves')
+    // this.props.history.replace('/moves')
+  
+    this.props.history.push(`/users/${this.props.userId}/moves`)
   }
 
   render() {
-    // console.log(this.props);
+    console.log("NAV BAR", this.props.userId);
     return (
       <nav className="nav-wrapper white">
        <div className="container">
-       <span className="center brand-logo" style={{marginTop: '5px'}}>
-          <img id="logo" src="../images/logo-draft.png" alt="MESA Logo"/>
+        <span className="center brand-logo" style={{marginTop: '5px'}}>
+          <img id="logo" src="../images/sample.png" alt="MESA Logo"/>
         </span>
          <ul className="left hide-on-med-and-down">
            <li>
-            <button className="nav-btn col s2 btn-small cyan lighten-2" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
-              Log Out
-            </button>
+           <button className="nav-btn col s2 btn-small cyan lighten-2" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
+             Log Out
+           </button>
             <button onClick={this.handleClick} className="col s2 btn-small cyan lighten-2" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
               Moves
             </button>
@@ -34,17 +47,10 @@ class NavBar extends React.Component {
 
 }
 
-export default withRouter(NavBar);
+const mapStateToProps = state => {
+  return {
+    userId: state.user.user_id
+  }
+}
 
-// <span class="brand-logo center">LOGO</span>
-
-// <NavLink to="/">
-// <button className="nav-btn white-text waves-effect cyan lighten-2 btn-small" style={{fontFamily: 'Hammersmith One'}}>
-// Moves
-// </button>
-// </NavLink>
-// </li>
-// <li>
-// <button className="nav-btn white-text waves-effect cyan lighten-2 btn-small" style={{fontFamily: 'Hammersmith One'}}>
-// Logout
-// </button>
+export default withRouter(connect(mapStateToProps)(NavBar));

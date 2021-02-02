@@ -42,7 +42,7 @@ export function addItem(name, image, userId, moveId, boxId) {
     })
     .then(r => r.json())
     .then(newItem => {
-      debugger
+      // debugger
       return dispatch({ type: "ADD_ITEM", payload: newItem })
     })
   }
