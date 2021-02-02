@@ -27,9 +27,7 @@ class NavBar extends React.Component {
     return (
       <nav className="nav-wrapper white">
        <div className="container">
-        <span className="center brand-logo" style={{marginTop: '5px'}}>
-          <img id="logo" src="../images/sample.png" alt="MESA Logo"/>
-        </span>
+        
          <ul className="left hide-on-med-and-down">
            <li>
            <button className="nav-btn col s2 btn-small cyan lighten-2" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
@@ -40,6 +38,9 @@ class NavBar extends React.Component {
             </button>
           </li>
          </ul>
+         <div style={{color: 'black'}}>LOGO??
+
+         </div>
        </div>
       </nav>
     )
