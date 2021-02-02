@@ -25,7 +25,7 @@ class ItemsContainer extends React.Component {
   render() {
     return (
       <div className="container">
-        <h2 className="card-panel white black-text cont-title">Items in Box: #{this.state.boxNum}</h2>
+        <h2 className="card-panel white black-text cont-title">Items in Box #{this.state.boxNum}</h2>
         <ItemList />
       </div>
     )
