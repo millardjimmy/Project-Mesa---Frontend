@@ -66,7 +66,7 @@ componentDidUpdate(prevProps) {
             
             <div className="submit-btn">
             <button type="submit" className="addOrEditMoveBtn col s2 btn-small cyan lighten-2" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
-                {this.state.editing ? "Submit" : "Add"}
+                {this.state.editing ? "Submit" : "Add Move"}
               </button>
             </div>
           </div>
