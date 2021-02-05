@@ -24,18 +24,7 @@ class MyBoxesHeader extends React.Component {
     })
   }
 
-  // reformatDate = (date) => {
-  //   if (date) {
-  //     let arrayOfDate = date.split("-")
-  //     let newArrOfDate = []
-  //     newArrOfDate.push(arrayOfDate[1])
-  //     newArrOfDate.push(arrayOfDate[2])
-  //     newArrOfDate.push(arrayOfDate[0])
-  //     return newArrOfDate.join(',').split(',').join("-")
-  //   } else {
-  //     return null;
-  //   }
-  // }
+
 
   render() {
 

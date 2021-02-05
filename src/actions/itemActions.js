@@ -34,7 +34,7 @@ export function addItem(name, image, userId, moveId, boxId) {
   return(dispatch) => {
     fetch(`http://localhost:3000/users/${userId}/moves/${moveId}/boxes/${boxId}/items`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage['Authorization']}` },
       body: JSON.stringify({
         name: name,
         image: image
