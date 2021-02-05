@@ -20,7 +20,7 @@ class NavBar extends React.Component {
   render() {
     console.log("NAV BAR", this.props.loggedIn);
     return (
-      <nav className="nav-wrapper white">
+      <nav id="nav" className="nav-wrapper white">
        <div className="container">
          <ul className="left hide-on-med-and-down">
            <li>
@@ -35,7 +35,9 @@ class NavBar extends React.Component {
             }
           </li>
          </ul>
-         <div style={{color: 'black'}}>LOGO??
+         <div className="brand-logo center">
+
+          <img id="logo-draft" src="../images/logo-draft.png" alt="LOGO"/>
 
          </div>
        </div>
