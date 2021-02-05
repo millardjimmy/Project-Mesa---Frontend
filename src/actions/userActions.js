@@ -8,7 +8,7 @@ export const /*FUNCTION*/ loginUser = (username, password) => {
       // adapter.loginUser(username, password)
       // http://localhost:3000
       // console.log(`${process.env.REACT_APP_API_ENDPOINT}/api/v1/login`);
-      fetch(`${process.env.REACT_APP_API_ENDPOINT}/api/v1/login`, { //TODO: move this to an adapter
+      fetch(`${process.env.REACT_APP_API_ENDPOINT}/login`, { //TODO: move this to an adapter
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

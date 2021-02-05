@@ -58,7 +58,8 @@ export function addItem(name, image, userId, moveId, boxId) {
 export function deleteItem(userId, moveId, boxId, itemId) {
   return(dispatch) => {
     fetch(`http://localhost:3000/users/${userId}/moves/${moveId}/boxes/${boxId}/items/${itemId}`, {
-      method: 'DELETE'
+      method: 'DELETE',
+      headers: {  Authorization: `Bearer ${localStorage.getItem('jwt')}` }
     })
     return dispatch({ type: 'DELETE_ITEM', payload: itemId })
   }

@@ -8,7 +8,7 @@ const movesReducer = (state=initialState, action) => {
       return [...action.payload]
 
     case "ADD_MOVE":
-      debugger
+      // debugger
       return [...state, action.payload]
 
     case "DELETE_MOVE":

@@ -16,7 +16,7 @@ export function getBoxes(userId, moveId) {
 // CREATE A BOX
 export function addBox(name, category, userId, moveId) {
   return(dispatch) => {
-    fetch(`http://localhost:3000/api/v1/users/${userId}/moves/${moveId}/boxes`, {
+    fetch(`http://localhost:3000/users/${userId}/moves/${moveId}/boxes`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('jwt')}` },
       body: JSON.stringify({
@@ -33,11 +33,12 @@ export function addBox(name, category, userId, moveId) {
 }
 
 // DELETE A BOX
-// `http://localhost:3000/api/v1/users/${userId}/moves/${moveId}/boxes/${boxId}`
+// `http://localhost:3000/users/${userId}/moves/${moveId}/boxes/${boxId}`
 export function deleteBox(userId, moveId, boxId) {
   return(dispatch) => {
-    fetch(`http://localhost:3000/api/v1/users/${userId}/moves/${moveId}/boxes/${boxId}`, {
-      method: 'DELETE'
+    fetch(`http://localhost:3000/users/${userId}/moves/${moveId}/boxes/${boxId}`, {
+      method: 'DELETE',
+      headers: {  Authorization: `Bearer ${localStorage.getItem('jwt')}` }
     })
       return dispatch({type: 'DELETE_BOX', payload: boxId})
   }
@@ -59,10 +60,10 @@ export function selectBox(box) {
 // }
 
 // PATCH REQUEST / EDIT BOX
-// `http://localhost:3000/api/v1/users/${userId}/moves/${moveId}/boxes/${boxId}`
+// `http://localhost:3000/users/${userId}/moves/${moveId}/boxes/${boxId}`
 export function editBox(name, category, userId, moveId, boxId) {
   return(dispatch) => {
-    fetch(`http://localhost:3000/api/v1/users/${userId}/moves/${moveId}/boxes/${boxId}`, {
+    fetch(`http://localhost:3000/users/${userId}/moves/${moveId}/boxes/${boxId}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json', Accept: 'application/json', Authorization: `Bearer ${localStorage.getItem('jwt')}` },
       body: JSON.stringify({
