@@ -21,6 +21,7 @@ class SignUp extends React.Component {
             <div className="card">
               <div className="card-action cyan lighten-2 white-text">
                 <h3>Sign Up</h3>
+                <p>Moving Expert Storage Assistant</p>
               </div>
               <div className="card-content">
                 <div className="form-field">
