@@ -73,3 +73,5 @@ export const /*FUNCTION*/ loginUser = (username, password) => {
   // export const authenticatingUser = () => {
   //   return { type: 'AUTHENTICATING_USER' }
   // }
+
+  export const logoutUser = () => ({ type: 'LOGOUT_USER' })
