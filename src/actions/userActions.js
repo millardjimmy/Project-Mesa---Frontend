@@ -47,7 +47,7 @@ export const /*FUNCTION*/ loginUser = (username, password) => {
     // takes the token in localStorage and finds out who it belongs to
     return (dispatch) => {
       dispatch(authenticatingUser()) //tells the app we are fetching
-      fetch(`${process.env.REACT_APP_API_ENDPOINT}/api/v1/profile`, {
+      fetch(`${process.env.REACT_APP_API_ENDPOINT}/profile`, {
         method: 'GET',
         headers: {
           Authorization: `Bearer ${localStorage.getItem('jwt')}`
@@ -75,3 +75,24 @@ export const /*FUNCTION*/ loginUser = (username, password) => {
   // }
 
   export const logoutUser = () => ({ type: 'LOGOUT_USER' })
+
+// SIGN UP USER
+export const signUpUser = (username, password) => {
+	return (dispatch) => {
+	  const data = { user: {username, password} }
+	    fetch(`${process.env.REACT_APP_API_ENDPOINT}/users`,{
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+					Accept: 'application/json'
+				},
+        body: JSON.stringify(data)
+      })
+      .then(res => res.json())
+	    .then(res => {
+		    localStorage.setItem('jwt', res.jwt)
+		    dispatch({ type: "SET_CURRENT_USER", payload: res.user})
+	     })
+
+	}
+  }
