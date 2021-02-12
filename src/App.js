@@ -8,18 +8,18 @@ import ItemsContainer from './containers/ItemsContainer'
 import NavBar from './components/NavBar'
 import { Route, Switch, Redirect } from 'react-router-dom'
 import LoginForm from './components/LoginForm'
-import SignUp from './components/Signup'
+import SignUp from './components/SignUp'
 
 
 const App = props => {
-  console.log("%c APP PROPS", 'color: pink', props);
+  console.log("%c APP PROPS", 'color: blue', props);
   return (
     <Fragment>
       <div className="App">
         <NavBar />
         <Switch>
           <Route exact path="/" render={() => <Redirect to="/users/:userId/moves" />} />
-          <Route exact path="/signup" component={Signup} />
+          <Route exact path="/signup" component={SignUp} />
           <Route exact path="/login" component={LoginForm} />
           <Route exact path = "/users/:userId/moves" render={() => <MoveContainer />} />
           <Route exact path="/users/:userId/moves/:moveId/boxes" render={() => <BoxContainer/>} />

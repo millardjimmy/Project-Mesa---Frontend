@@ -37,7 +37,7 @@ class NavBar extends React.Component {
          </ul>
          <div className="brand-logo center">
 
-          <img id="logo-draft" src="../images/logo-draft.png" alt="LOGO"/>
+          <img id="logo-draft" src="../images/logo-draft-navbar.png" alt="LOGO"/>
 
          </div>
        </div>

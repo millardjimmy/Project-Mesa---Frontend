@@ -29,7 +29,7 @@ class LoginForm extends React.Component {
 
 
   render() {
-    // console.log("LovinForm", this.props);
+    // console.log("LoginForm", this.props);
     return this.props.loggedIn ? (
       <Redirect to={"/users/" + this.props.user.user.id + "/moves"}/>
       ) : (
@@ -57,6 +57,7 @@ class LoginForm extends React.Component {
                   <button className="btn-large waves-effect waves-dark cyan lighten-2" type="submit" style={{width: '100%', fontFamily: 'Hammersmith One, sans-serif'}}>
                     Login
                   </button>
+                  
                 </div>
 
               </div>

@@ -48,7 +48,7 @@
 }
 
 #side-bar {
-  background-image: url("/images/logo-draft.jpg");
+  /* background-image: url("/logo-draft.jpg"); */
   background-size: 100%;
   background-repeat: no-repeat;
   opacity: 1;
@@ -66,7 +66,7 @@
 }
 
 .box-card {
-  background-image: url("/images/logo-draft.jpg");
+  /* background-image: url("/images/logo-draft.jpg"); */
   background-size: 100%;
   background-repeat: no-repeat;
   opacity: 1;
