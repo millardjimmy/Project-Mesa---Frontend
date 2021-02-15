@@ -2,7 +2,7 @@
 export const /*FUNCTION*/ loginUser = (username, password) => {
     return /*FUNCTION*/ (dispatch) => { 
       dispatch({ type: 'AUTHENTICATING_USER' })
-      fetch(`${process.env.REACT_APP_API_ENDPOINT}/login`, { //TODO: move this to an adapter
+      fetch(`http://127.0.0.1:3000/login`, { 
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -33,16 +33,26 @@ export const /*FUNCTION*/ loginUser = (username, password) => {
     }
   }
 
+  // export const fetchCurrentUser = () => {
+  //   // takes the token in localStorage and finds out who it belongs to
+  //   return (dispatch) => {
+  //     dispatch(authenticatingUser()) //tells the app we are fetching
+  //     fetch(`${process.env.REACT_APP_API_ENDPOINT}/profile`, {
+  //       method: 'GET',
+  //       headers: {
+  //         Authorization: `Bearer ${localStorage.getItem('jwt')}`
+  //       }
+  //     })
+  //       .then(response => response.json())
+  //       .then((JSONResponse) => dispatch(setCurrentUser(JSONResponse.user)))
+  //   }
+  // }
+
   export const fetchCurrentUser = () => {
     // takes the token in localStorage and finds out who it belongs to
     return (dispatch) => {
       dispatch(authenticatingUser()) //tells the app we are fetching
-      fetch(`${process.env.REACT_APP_API_ENDPOINT}/profile`, {
-        method: 'GET',
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem('jwt')}`
-        }
-      })
+      fetch(`http://127.0.0.1:3000/get_first_user`)
         .then(response => response.json())
         .then((JSONResponse) => dispatch(setCurrentUser(JSONResponse.user)))
     }
@@ -68,7 +78,7 @@ export const /*FUNCTION*/ loginUser = (username, password) => {
 export const signUpUser = (username, password) => {
 	return (dispatch) => {
 	  const data = { user: {username, password} }
-	    fetch(`${process.env.REACT_APP_API_ENDPOINT}/users`,{
+	    fetch(`http://127.0.0.1:3000/users`,{
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',

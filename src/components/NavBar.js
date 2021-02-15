@@ -1,8 +1,8 @@
 import React from 'react';
 // import { NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router-dom'
-import { connect } from 'react-redux';
-import { logoutUser } from '../actions/userActions'
+// import { connect } from 'react-redux';
+// import { logoutUser } from '../actions/userActions'
 
 class NavBar extends React.Component {
 
@@ -54,11 +54,11 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    logoutUser: () => dispatch(logoutUser())
-  }
-}
+//const mapDispatchToProps = dispatch => {
+//  return {
+ //   logoutUser: () => dispatch(logoutUser())
+//   }
+// }
 
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(NavBar));
+export default withRouter(mapStateToProps )(NavBar);
