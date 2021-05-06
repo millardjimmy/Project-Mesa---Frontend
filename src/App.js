@@ -9,8 +9,8 @@ class App extends React.Component {
       method: 'GET'
   })
     .then(reponse => reponse.json())
-    
-    .then(data => console.log(data))
+
+    .then(data => console.log(data[0].balance))
   }
 
   render(){
