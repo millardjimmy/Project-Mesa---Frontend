@@ -18,7 +18,7 @@ class AccountsContainer extends React.Component {
         return (
 
             <div>
-                Accounts Container
+                Accounts Container file - title
                 <AccountInput/>
                 <Accounts accounts={this.props.accounts}/>
             </div>
