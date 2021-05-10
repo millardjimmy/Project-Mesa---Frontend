@@ -1,4 +1,6 @@
 import React from 'react' 
+import {connect} from 'react-redux'
+import {addAccount} from '../actions/addAccount'
 
 
 class AccountInput extends React.Component {
@@ -13,16 +15,23 @@ class AccountInput extends React.Component {
             [event.target.name]: event.target.value
         })
     }
-// 
+
+    handleSubmit = (event) => {
+        event.preventDefault()
+        this.props.addAccount()
+    }
+
     render() {
         return (
             <div>
-                <form>
-                    <br></br><label>Checking Account Name: </label>
+                <form onSubmit={this.handleSubmit}>
+                    <br/><label>Checking Account Name: </label>
                     <input type='text' placeholder='Name' value={this.state.name} name="name" onChange={this.handleChange} />
 
-                    <br></br><label>Checking Account Balance: </label>
+                    <br/><label>Checking Account Balance: </label>
                     <input type='text' placeholder='Balance' value={this.state.balance} name="balance" onChange={this.handleChange} />
+
+                    <br/><input type="submit" />
 
                 </form>
             </div>
@@ -32,4 +41,4 @@ class AccountInput extends React.Component {
 
 }
 
-export default AccountInput
+export default connect(null, {addAccount})(AccountInput)
