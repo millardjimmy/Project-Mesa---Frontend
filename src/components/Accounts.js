@@ -3,10 +3,13 @@ import React from 'react'
 
 const Accounts = (props) =>  {
 
-    
+    return (
+        <div>
+            Accounts
+        </div>
+    )
 
 }
 
 
-
-// functional component
+export default Accounts
