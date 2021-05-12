@@ -1,5 +1,6 @@
 import React from 'react' 
-import Account from './AccountShow'
+import Account from './Account'
+import {Route, Link} from 'react-router-dom'
 
 
 const Accounts = (props) =>  {
@@ -9,7 +10,9 @@ const Accounts = (props) =>  {
             Account List:
             </p>
             {props.accounts.map(account => 
-            <div key={account.id}> <Account account={account}/> </div> )}
+            <li key={account.id}> 
+                <Link to={`/accounts/${account.id}`}> {account.name} </Link> 
+            </li> )}
         </div>
     )
 
