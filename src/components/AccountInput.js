@@ -42,3 +42,6 @@ class AccountInput extends React.Component {
 }
 
 export default connect(null, {addAccount})(AccountInput)
+
+
+// controlled form means that input is held in state
