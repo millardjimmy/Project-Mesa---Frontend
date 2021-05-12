@@ -1,5 +1,6 @@
 import React from 'react' 
 import {Redirect} from 'react-router-dom'
+import TransactionContainer from '../containers/TransactionsContainer'
 
 
 
@@ -10,10 +11,13 @@ const Account = (props) => {
     console.log(account)
 
     return (
-        <li>
-            {/* {account ? null : <Redirect to='/accounts'/>} */}
-            {account ? account.name : null} - {account ? account.balance : null}
-        </li>
+        <div>
+            <h2>
+                {/* {account ? null : <Redirect to='/accounts'/>} */}
+                {account ? account.name : null} - {account ? account.balance : null}
+            </h2>
+                <TransactionContainer account={account}/>
+        </div>
     )
 
 
