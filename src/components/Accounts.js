@@ -1,13 +1,15 @@
 import React from 'react' 
+import Account from './AccountShow'
 
 
 const Accounts = (props) =>  {
 
     return (
         <div><p>
-            a list under here but it isn't fetching outside of my machine
+            Account List:
             </p>
-            {props.accounts.map(account => <li>{account.name} - {account.balance} </li> )}
+            {props.accounts.map(account => 
+            <div key={account.id}> <Account account={account}/> </div> )}
         </div>
     )
 
